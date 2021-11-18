@@ -1,0 +1,44 @@
+{
+    "name": "zorachka/middleware-cors",
+    "description": "Zorachka CORS Middleware",
+    "keywords": [
+        "zorachka",
+        "middleware",
+        "cors"
+    ],
+    "homepage": "https://github.com/zorachka/middleware-cors",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Siarhei Bautrukevich",
+            "email": "hello@bautrukevich.com",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": "^8.0",
+        "psr/http-message": "^1.0",
+        "psr/http-server-handler": "^1.0",
+        "psr/http-server-middleware": "^1.0",
+        "zorachka/container": "dev-main"
+    },
+    "require-dev": {
+        "pestphp/pest": "^1.21",
+        "roave/security-advisories": "dev-latest"
+    },
+    "autoload": {
+        "psr-4": {
+            "Zorachka\\Framework\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Zorachka\\Framework\\Tests\\": "tests"
+        }
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}
