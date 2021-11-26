@@ -14,7 +14,7 @@ final class CorsConfig
     private int $maxAge;
     private bool $supportsCredentials;
 
-    public function __construct(
+    private function __construct(
         array $allowedHeaders,
         array $allowedMethods,
         array $allowedOrigins,
