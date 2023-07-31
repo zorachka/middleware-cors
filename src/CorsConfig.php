@@ -2,34 +2,19 @@
 
 declare(strict_types=1);
 
-namespace Zorachka\Framework\Cors;
+namespace Zorachka\Middleware\Cors;
 
 final class CorsConfig
 {
-    private array $allowedHeaders;
-    private array $allowedMethods;
-    private array $allowedOrigins;
-    private array $allowedOriginsPatterns;
-    private array $exposedHeaders;
-    private int $maxAge;
-    private bool $supportsCredentials;
-
     private function __construct(
-        array $allowedHeaders,
-        array $allowedMethods,
-        array $allowedOrigins,
-        array $allowedOriginsPatterns,
-        array $exposedHeaders,
-        int $maxAge,
-        bool $supportsCredentials,
+        private array $allowedHeaders,
+        private array $allowedMethods,
+        private array $allowedOrigins,
+        private array $allowedOriginsPatterns,
+        private array $exposedHeaders,
+        private int $maxAge,
+        private bool $supportsCredentials,
     ) {
-        $this->allowedHeaders = $allowedHeaders;
-        $this->allowedMethods = $allowedMethods;
-        $this->allowedOrigins = $allowedOrigins;
-        $this->allowedOriginsPatterns = $allowedOriginsPatterns;
-        $this->exposedHeaders = $exposedHeaders;
-        $this->maxAge = $maxAge;
-        $this->supportsCredentials = $supportsCredentials;
     }
 
     public static function withDefaults(
@@ -52,9 +37,6 @@ final class CorsConfig
         );
     }
 
-    /**
-     * @return array
-     */
     public function allowedHeaders(): array
     {
         return $this->allowedHeaders;
@@ -68,9 +50,6 @@ final class CorsConfig
         return $new;
     }
 
-    /**
-     * @return array
-     */
     public function allowedMethods(): array
     {
         return $this->allowedMethods;
@@ -84,9 +63,6 @@ final class CorsConfig
         return $new;
     }
 
-    /**
-     * @return array
-     */
     public function allowedOrigins(): array
     {
         return $this->allowedOrigins;
@@ -100,33 +76,21 @@ final class CorsConfig
         return $new;
     }
 
-    /**
-     * @return array
-     */
     public function allowedOriginsPatterns(): array
     {
         return $this->allowedOriginsPatterns;
     }
 
-    /**
-     * @return array
-     */
     public function exposedHeaders(): array
     {
         return $this->exposedHeaders;
     }
 
-    /**
-     * @return int
-     */
     public function maxAge(): int
     {
         return $this->maxAge;
     }
 
-    /**
-     * @return bool
-     */
     public function supportsCredentials(): bool
     {
         return $this->supportsCredentials;
